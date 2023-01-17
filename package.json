@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint ."
   },
   "dependencies": {
     "core-js": "^3.25.3",
@@ -16,7 +17,10 @@
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/types": "~2.15.0",
+    "@nuxtjs/router": "^1.7.0",
+    "eslint": "^8.32.0",
     "nuxt-windicss": "^2"
   }
 }
