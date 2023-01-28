@@ -47,5 +47,14 @@ export default {
   },
   vuetify: {
     customVariables: ['~/styles/variable.scss']
-  }
+  },
+  windicss: {
+    scan: {
+      dirs: ['./'],
+      exclude: [
+        'node_modules',
+        'dist',
+      ],
+    },
+  },
 }
