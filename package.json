@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "core-js": "^3.25.3",
@@ -20,6 +20,7 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/types": "~2.15.0",
     "@nuxtjs/router": "^1.7.0",
+    "@nuxtjs/vuetify": "^1.12.3",
     "eslint": "^8.32.0",
     "nuxt-windicss": "^2"
   }

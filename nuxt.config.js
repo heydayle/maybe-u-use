@@ -19,10 +19,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/styles/index.scss',
+    'vuetify/dist/vuetify.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/mixins-plugin.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -32,6 +35,7 @@ export default {
   buildModules: [
     'nuxt-windicss',
     '@nuxtjs/router',
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,5 +44,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  vuetify: {
+    customVariables: ['~/styles/variable.scss']
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <v-app>
   <div
     tw-m="x-auto"
     tw-w="xl:300"
@@ -26,12 +27,19 @@
       Banner full
     </div>
   </div>
+  </v-app>
 </template>
 
 <script>
 import Header from "../components/Header";
 export default {
   name: 'IndexPage',
-  components: { Header }
+  components: { Header },
+  mounted() {
+    const windowWith = window.innerWidth
+    const windowHeight = window.innerHeight
+    this.$store.commit('dom/SET_WINDOW_WIDTH', windowWith)
+    this.$store.commit('dom/SET_WINDOW_HEIGHT', windowHeight)
+  }
 }
 </script>

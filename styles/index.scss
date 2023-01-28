@@ -1,0 +1,178 @@
+@import './header';
+
+.v-btn {
+  @apply tw-text-3.25 tw-tracking-normal tw-normal-case tw-shadow-none focus:tw-outline-none tw-h-10;
+
+  &__content {
+    @apply tw-pb-0.5;
+  }
+}
+.v-text-field {
+  .v-input {
+    &__slot {
+      input {
+        @apply tw-ring-transparent;
+      }
+    }
+  }
+  &.c-text-field-h-10 {
+    @apply tw-text-gray tw-bg-white;
+
+    &.v-input--is-focused,
+    &.v-input--has-state {
+      .v-input {
+        &__slot {
+          fieldset {
+            @apply tw-border tw-border-solid tw-border-seagreen-700;
+          }
+        }
+      }
+
+      &.error--text {
+        .v-input {
+          &__slot {
+            fieldset {
+              @apply tw-border-red-500;
+            }
+          }
+        }
+      }
+    }
+
+    &.v-input--is-disabled {
+      @apply tw-text-gray-400;
+      .v-input {
+        &__slot {
+          input {
+            @apply tw-text-gray-400;
+          }
+        }
+      }
+    }
+
+    &:not(.v-input--is-focused):not(.v-input--is-label-active) {
+      .v-label {
+        @apply tw-top-3;
+      }
+    }
+
+    .v-input {
+      &__slot {
+        @apply tw-h-10;
+        @apply tw-min-h-10;
+
+        .v-label {
+          @apply tw-text-xs tw-font-medium;
+        }
+
+        input {
+          @apply tw-text-3.25 tw-font-medium tw-text-gray-900 tw-py-1.5 tw-placeholder-gray-600;
+
+          &::placeholder {
+            @apply tw-text-3.25 tw-font-medium tw-text-aluminium;
+          }
+
+          &[type='number'] {
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              appearance: none;
+              -moz-appearance: textfield;
+            }
+          }
+        }
+
+        .v-input__append-inner {
+          & ~ .v-input__append-inner {
+            @apply tw-ml-0.5;
+          }
+
+          .v-icon {
+            @apply tw-mb-1;
+            &__svg {
+              @apply tw-w-5 tw-h-5;
+            }
+          }
+
+          .svg-icon {
+            @apply tw-w-5 tw-h-5 tw-stroke-current;
+          }
+
+          .c-btn-recheck-sale-code {
+            .v-btn {
+              &__content {
+                svg {
+                  @apply tw-w-4!important tw-h-4!important;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__append-inner {
+        @apply tw-mt-2.3;
+      }
+    }
+
+    .v-text-field {
+      &__suffix {
+        @apply tw-text-3.25 tw-text-gray-900 tw-pb-0.5;
+      }
+    }
+  }
+  &.c-text-field-details {
+    .v-input__slot:hover ~ .v-text-field__details,
+    .v-text-field__details:hover {
+      @apply tw-inline-flex;
+    }
+
+    .v-input {
+      &__slot {
+        @apply tw-mb-0;
+      }
+    }
+
+    .v-text-field__details {
+      @apply tw-hidden tw-absolute tw-bottom-full tw-justify-center tw-w-full tw-transition-all tw-duration-200;
+      @apply tw-pb-2 tw--mb-0;
+      .v-messages {
+        @apply tw-flex-none tw-max-w-full;
+        &__message {
+          @apply tw-pb-px tw-text-xs tw-leading-normal tw-transition-none tw-transform-none;
+          &:after {
+            content: '';
+            border-width: 5px;
+            bottom: -5px;
+            @apply tw-absolute tw-left-1/2 tw-border-red-500 tw-border-solid tw-transform tw-rotate-45 tw--translate-x-1/2;
+          }
+        }
+
+        &__wrapper {
+          @apply tw-px-2 tw-py-1;
+        }
+
+        &.error--text {
+          @apply tw-text-white tw-bg-red-500 tw-rounded-md;
+        }
+
+        @screen 2xl {
+          &__message {
+            @apply tw-text-xs;
+          }
+
+          &__wrapper {
+            @apply tw-px-4 tw-py-1.5;
+          }
+        }
+      }
+    }
+
+    &.c-text-field-counter-hide {
+      .v-text-field__details {
+        .v-counter {
+          @apply tw-hidden;
+        }
+      }
+    }
+  }
+}

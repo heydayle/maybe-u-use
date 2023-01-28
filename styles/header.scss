@@ -1,0 +1,13 @@
+@import './variable.scss';
+
+.c-header {
+  background-color: $bg-main !important;
+}
+.c-button-header {
+  font-size: 13px !important;
+  text-transform: unset !important;
+  padding: 8px !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  .v-btn__content {
+  }
+}
