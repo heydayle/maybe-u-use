@@ -1,16 +1,12 @@
 <template>
-  <div>
+  <div class="c-header tw-w-full">
     <!--    //Share-->
     <div
-      class="c-header tw-p-2"
-      tw-flex="~"
-      tw-h="20"
-      tw-items="center"
-      tw-space="x-4"
+      class="c-container tw-mx-auto tw-py-2 tw-px-2 tw-flex tw-flex-row tw-justify-center tw-h-20 tw-items-center tw-space-x-4"
     >
       <v-menu
+        v-if="isXL"
         offset-x
-        open-on-hover
       >
         <template #activator="{ on, attrs }">
           <v-btn
@@ -25,24 +21,47 @@
             </v-icon>
           </v-btn>
         </template>
-        <div>
-          <p
-            v-for="(item, index) in 10"
+        <div class="tw-flex tw-flex-col">
+          <div
+            v-for="(item, index) in categories"
             :key="index"
+            class="tw-bg-white"
           >
-            {{ index }}
-          </p>
+            <v-menu
+              offset-x
+              open-on-hover
+            >
+              <template #activator="{ on, attrs }">
+                <v-btn
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ item.label }}
+                  <v-icon :dark="!item.childs">
+                    mdi-chevron-right
+                  </v-icon>
+                </v-btn>
+              </template>
+              <template v-if="item.childs">
+                <v-btn
+                  v-for="(child) in item.childs"
+                  :key="item.id"
+                >
+                  {{ child.label }}
+                </v-btn>
+              </template>
+            </v-menu>
+          </div>
         </div>
       </v-menu>
-      <div tw-overflow="hidden">
+      <div class="tw-overflow-hidden">
         <img
           src="../../assets/images/logo.jpg"
-          tw-ocject="cover"
+          class="tw-object-cover"
         >
       </div>
       <v-menu
         offset-x
-        open-on-hover
       >
         <template #activator="{ on, attrs }">
           <v-btn
@@ -56,11 +75,18 @@
               mdi-map-marker
             </v-icon>
             <div>
-              <div tw-w="15" tw-m="t-1" tw-text="white left">
+              <div
+                tw-w="15"
+                tw-m="t-1"
+                tw-text="white left"
+              >
                 {{ 'Xem giá tại' }}
               </div>
-              <div tw-flex="~" tw-items="center">
-                {{Arenas[arena].label}}
+              <div
+                tw-flex="~"
+                tw-items="center"
+              >
+                {{ Arenas[arena].label }}
                 <v-icon dark>
                   mdi-chevron-down
                 </v-icon>
@@ -70,10 +96,14 @@
         </template>
         <v-list>
           <v-list-item
-            v-for="(item, index) in 10"
+            v-for="(item, index) in Arenas"
             :key="index"
           >
-            <v-list-item-title>{{ index }}</v-list-item-title>
+            <v-list-item-title>
+              <v-btn @click="arena=item.value">
+                {{ item.label }}
+              </v-btn>
+            </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -82,10 +112,15 @@
           class="tw-rounded-lg c-text-field-h-10 c-text-field-details"
           outlined
           placeholder="Tìm kiếm"
-        />
+        >
+          <template #prepend>
+            <v-icon dark>
+              mdi-map-marker
+            </v-icon>
+          </template>
+        </v-text-field>
         <div
-          tw-flex="~"
-          tw-text="3.25 white"
+          class="tw-flex tw-text-3.25 tw-text-white"
         >
           <v-icon
             dark
@@ -98,6 +133,21 @@
               {{ 'Gọi mua hàng' }}
             </div>
             <div><b>{{ '1800.2097' }}</b></div>
+          </div>
+        </div>
+        <div
+          class="tw-flex tw-text-3.25 tw-text-white"
+        >
+          <v-icon
+            dark
+            large
+          >
+            mdi-map-marker
+          </v-icon>
+          <div>
+            <div class="tw-font-semibold tw-w-14">
+              {{ 'Cửa hàng gần bạn' }}
+            </div>
           </div>
         </div>
         <div tw-flex="~">
@@ -116,31 +166,63 @@
             {{ 'Tra cứu đơn hàng' }}
           </div>
         </div>
-        <div>Sign in</div>
       </template>
-
-      <div>Other</div>
+      <v-menu offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn
+            class="c-button-header"
+            dark
+            solo
+            v-bind="attrs"
+            v-on="on"
+          >
+            <div>
+              <v-icon>mdi-cart-outline</v-icon>
+              <div
+                class="tw-text-center tw-text-white tw-w-15"
+              >
+                {{ 'Giỏ hàng' }}
+              </div>
+            </div>
+          </v-btn>
+        </template>
+      </v-menu>
     </div>
     <!--    //Mobile-->
     <div
       v-if="isXS"
       tw-w="xs:full"
     >
-      <v-text-field placeholder="Search" />
+      <v-text-field
+        class="tw-rounded-lg c-text-field-h-10 c-text-field-details"
+        outlined
+        placeholder="Tìm kiếm"
+      >
+        <template #prepend-inner>
+          <v-icon>
+            mdi-magnify
+          </v-icon>
+        </template>
+      </v-text-field>
     </div>
     <!--    //Desktop-->
   </div>
 </template>
 
 <script>
-import { Arenas } from '~/misc/enums/common.js'
+import { Arenas } from '~/misc/enums/common.js';
 export default {
   name: "Header",
+  props: {
+    categories: {
+      type: Array,
+    }
+  },
   data() {
     return {
       Arenas,
       arena: 0,
     }
-  }
+  },
 }
 </script>

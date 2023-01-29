@@ -1,5 +1,15 @@
 @import './header';
-
+html {
+  overflow: hidden !important;
+}
+.c-container {
+  @screen xs {
+    max-width: unset !important;
+  }
+  @screen xl {
+    max-width: 1200px !important;
+  }
+}
 .v-btn {
   @apply tw-text-3.25 tw-tracking-normal tw-normal-case tw-shadow-none focus:tw-outline-none tw-h-10;
 
