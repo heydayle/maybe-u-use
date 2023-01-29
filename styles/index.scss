@@ -67,6 +67,9 @@ html {
     }
 
     .v-input {
+      &__prepend-outer {
+        @apply tw-mt-0;
+      }
       &__slot {
         @apply tw-h-10;
         @apply tw-min-h-10;
@@ -105,16 +108,6 @@ html {
 
           .svg-icon {
             @apply tw-w-5 tw-h-5 tw-stroke-current;
-          }
-
-          .c-btn-recheck-sale-code {
-            .v-btn {
-              &__content {
-                svg {
-                  @apply tw-w-4!important tw-h-4!important;
-                }
-              }
-            }
           }
         }
       }
