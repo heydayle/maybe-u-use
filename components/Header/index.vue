@@ -148,7 +148,7 @@
             </div>
           </div>
         </div>
-        <div tw-flex="~">
+        <div class="tw-flex">
           <v-icon
             dark
             large
