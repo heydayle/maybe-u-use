@@ -11,8 +11,8 @@
     <div class="swiper-pagination"></div>
 
     <!-- If navigation buttons are needed -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev tw-text-white tw-text-lg"></div>
+    <div class="swiper-button-next tw-text-white tw-text-lg"></div>
   </div>
 </template>
 
