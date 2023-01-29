@@ -78,7 +78,7 @@
             </v-icon>
             <div>
               <div
-                class="tw-w-15 tw-mt-1 tw-text-white tw-text-left"
+                class="tw-w-15 tw-mt-1 tw-text-left"
               >
                 {{ 'Xem giá tại' }}
               </div>
@@ -108,12 +108,12 @@
       </v-menu>
       <template v-if="isLG">
         <v-text-field
-          class="tw-rounded-lg c-text-field-h-10 c-text-field-details"
+          class="tw-rounded-lg tw-p-0 tw-m-0 c-text-field-h-10 c-text-field-details"
           placeholder="Tìm kiếm"
         >
           <template #prepend>
             <v-icon class="tw-mt-2">
-              mdi-map-marker
+              mdi-magnify
             </v-icon>
           </template>
         </v-text-field>
@@ -189,7 +189,7 @@
       class="tw-w-full tw-px-4"
     >
       <v-text-field
-        class="tw-rounded-lg c-text-field-h-10 c-text-field-details"
+        class="tw-rounded-lg  tw-p-0 tw-m-0 c-text-field-h-10 c-text-field-details"
         placeholder="Tìm kiếm"
       >
         <template #prepend-inner>
