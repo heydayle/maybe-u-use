@@ -67,7 +67,6 @@
         <template #activator="{ on, attrs }">
           <v-btn
             class="c-button-header"
-            color="white"
             dark
             solo
             v-bind="attrs"
@@ -78,7 +77,7 @@
             </v-icon>
             <div>
               <div
-                class="tw-w-15 tw-mt-1 tw-text-left"
+                class="tw-w-15 tw-mt-1 tw-text-white tw-text-left"
               >
                 {{ 'Xem giá tại' }}
               </div>
@@ -93,7 +92,7 @@
             </div>
           </v-btn>
         </template>
-        <v-list>
+        <v-list color="white">
           <v-list-item
             v-for="(item, index) in Arenas"
             :key="index"
@@ -112,7 +111,7 @@
           placeholder="Tìm kiếm"
         >
           <template #prepend>
-            <v-icon class="tw-mt-2">
+            <v-icon class="tw-mt-2 tw-ml-1">
               mdi-magnify
             </v-icon>
           </template>
@@ -193,13 +192,12 @@
         placeholder="Tìm kiếm"
       >
         <template #prepend-inner>
-          <v-icon class="tw-mt-2">
+          <v-icon class="tw-mt-1 tw-ml-1">
             mdi-magnify
           </v-icon>
         </template>
       </v-text-field>
     </div>
-    <!--    //Desktop-->
   </div>
 </template>
 
