@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div v-for="(item, i) in images" :key="i" class="swiper-slide" :class="`slide--${i}`">
+      <div v-for="(item, i) in banners" :key="i" class="swiper-slide" :class="`slide--${i}`">
         <div class="slider-content">
           <v-img class="tw-w-full tw-object-fit-cover" :src="item"/>
         </div>
@@ -22,6 +22,11 @@ import 'swiper/swiper-bundle.min.css'
 
 export default {
   name: "MainBanner",
+  props: {
+    banners: {
+      type: Array
+    }
+  },
   data() {
     return {
       images: [

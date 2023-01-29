@@ -6,7 +6,10 @@
         class="c-container tw-mx-auto tw-grid tw-grid-cols-[100px,1fr,min-content] tw-grid-rows-1"
         :class="isXL ? 'tw-grid-cols-[100px,1fr,min-content]' : 'tw-grid-cols-1'"
       >
-        <div v-if="isXL" class="tw-col-span-1 tw-rounded-xl">
+        <div
+          v-if="isXL"
+          class="tw-col-span-1 tw-rounded-xl"
+        >
           <Category
             v-bind="{
               categories
@@ -16,18 +19,29 @@
         <div
           class="tw-col-span-1 tw-flex tw-flex-1 tw-overflow-hidden tw-text-center"
         >
-          <MainBanner/>
+          <MainBanner
+            v-bind="{
+              banners
+            }"
+          />
         </div>
-        <div v-if="isXL" class="tw-col-span-1 tw-flex tw-flex-col tw-space-y-4">
+        <div
+          v-if="isXL"
+          class="tw-col-span-1 tw-flex tw-flex-col tw-space-y-4"
+        >
           <div v-for="(item, index) in 3">
-            <v-img class="tw-rounded-lg" height="70" src="https://picsum.photos/200/300" />
+            <v-img
+              class="tw-rounded-lg"
+              height="70"
+              src="https://picsum.photos/200/300"
+            />
           </div>
         </div>
       </div>
       <div
         class="c-container tw-mx-auto tw-flex-1 tw-text-center"
       >
-        <v-img src="https://cdn2.cellphones.com.vn/1200x75,webp,q100/https://dashboard.cellphones.com.vn/storage/special-desktop.png"/>
+        <v-img src="https://cdn2.cellphones.com.vn/1200x75,webp,q100/https://dashboard.cellphones.com.vn/storage/special-desktop.png" />
       </div>
     </div>
   </v-app>
@@ -36,7 +50,7 @@
 <script>
 import Header from "~/components/Header";
 import Category from "~/components/Category";
-import { GetCategories } from "~/api/common";
+import { GetCategories, GetBanners } from "~/api/common";
 import MainBanner from "../components/MainBanner";
 export default {
   name: 'IndexPage',
@@ -44,11 +58,13 @@ export default {
   data() {
     return {
       categories: [],
+      banners: [],
       load: false
     }
   },
   created() {
     this.fetchCategory()
+    this.fetchBanner()
   },
   mounted() {
     const windowWith = window.innerWidth
@@ -75,7 +91,23 @@ export default {
         .finally(_ => {
           this.loading(false)
         })
-    }
+    },
+    fetchBanner() {
+      this.loading(true)
+      GetBanners()
+        .then(response => {
+          const result = response.data
+          if (result) {
+            this.banners = result
+          }
+        })
+        .catch(error => {
+          console.log(error.response.data.error.message)
+        })
+        .finally(_ => {
+          this.loading(false)
+        })
+    },
   }
 }
 </script>

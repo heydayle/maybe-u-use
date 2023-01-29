@@ -6,3 +6,9 @@ export function GetCategories() {
     method: 'get',
   })
 }
+export function GetBanners() {
+  return request({
+    url: '/v1/57a8a31b-86f5-42c6-853f-bec163a4ece6',
+    method: 'get',
+  })
+}
