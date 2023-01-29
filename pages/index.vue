@@ -16,7 +16,7 @@
         <div
           class="tw-col-span-1 tw-flex tw-flex-1 tw-overflow-hidden tw-text-center"
         >
-<!--          <MainBanner/>-->
+          <MainBanner/>
         </div>
         <div v-if="isXL" class="tw-col-span-1 tw-flex tw-flex-col tw-space-y-4">
           <div v-for="(item, index) in 3">
