@@ -40,6 +40,7 @@
       </div>
       <div
         class="c-container tw-mx-auto tw-flex-1 tw-text-center"
+        :class="isXL ? '' : 'tw-px-2'"
       >
         <v-img src="https://cdn2.cellphones.com.vn/1200x75,webp,q100/https://dashboard.cellphones.com.vn/storage/special-desktop.png" />
       </div>
