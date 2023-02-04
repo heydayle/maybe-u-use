@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   telemetry: false,
   head: {
-    title: 'cellphones',
+    title: 'Use your style',
     htmlAttrs: {
       lang: 'en'
     },

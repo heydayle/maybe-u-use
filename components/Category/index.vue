@@ -38,8 +38,8 @@
 export default {
   name: "Category",
   props: {
+    type: Array,
     categories: {
-      type: Array,
     },
     loading: {
       type: Boolean,
