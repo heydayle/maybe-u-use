@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   telemetry: false,
   head: {
-    title: 'Use your style',
+    title: 'Maybe u need',
     htmlAttrs: {
       lang: 'en'
     },
@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/mixins-plugin.js'
+    '~/plugins/mixins-plugin.js',
+    '~plugins/component-global'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

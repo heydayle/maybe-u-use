@@ -14,6 +14,7 @@ export default defineConfig({
   },
   prefix: 'tw-',
   important: true,
+  darkMode: 'class',
   theme: {
     extend: {
       screens: {

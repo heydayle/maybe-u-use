@@ -1,6 +1,8 @@
 <template>
-  <v-app>
-    <ListHorizontal />
+  <v-app class="tw-bg-gray-900">
+    <div class="tw-overflow-auto">
+      <ListHorizontal />
+    </div>
   </v-app>
 </template>
 
