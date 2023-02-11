@@ -1,14 +1,37 @@
 <template>
   <div class="tw-p-4 tw-w-full tw-overflow-y-auto">
-    <v-expansion-panels accordion dark>
+    <v-expansion-panels
+      accordion
+      dark
+    >
       <v-expansion-panel>
         <v-expansion-panel-header>
-          <h1>ListHorizontal.vue</h1>
+          <h1>List Horizontal</h1>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <pre v-highlightjs>
-            <code class="javascript">{{ list.horizontal }}</code>
-          </pre>
+          <v-tabs
+            v-model="tab"
+            align-with-title
+          >
+            <v-tabs-slider color="yellow" />
+            <v-tab
+              v-for="item in items"
+              :key="item"
+            >
+              {{ item }}
+            </v-tab>
+            <v-tabs-items dark v-model="tab">
+              <v-tab-item
+                v-for="item in items"
+                :key="item"
+                eager
+              >
+                <pre v-highlightjs>
+                  <code class="javascript">{{ list.horizontal[item] }}</code>
+                </pre>
+              </v-tab-item>
+            </v-tabs-items>
+          </v-tabs>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -52,6 +75,8 @@ export default {
   data() {
     return {
       list,
+      tab: 0,
+      items: [ 'vue','html','css'],
       horizontalCode: list.horizontal
     }
   },
