@@ -6,7 +6,7 @@ Currently, the project is in the early stages of development and I am learning a
 
 The project is apply Nuxt 2, Vuetify and Windicss for build.
 
-You can come [here](https://u-use.vercel.app/home) to experience and participate in my project if you like it.
+You can come [here](https://u-use.vercel.app/) to experience and participate in my project if you like it.
 
 Contact me via [this email](mailto:tatheyday@gmail.com).
 
