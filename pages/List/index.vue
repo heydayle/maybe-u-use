@@ -5,7 +5,7 @@
       :key="index"
       text
       dark
-      :to="`/list/${item.name}`"
+      :to="`/list/${item.slug}`"
     >
       {{ item.name }}
     </v-btn>

@@ -1,5 +1,5 @@
 export const header = {
-  title: 'Maybe u use',
-  subTitle: 'Ill write something on here!',
+  title: 'Maybe u_use',
+  subTitle: "I'll write something on here!",
   contact: []
 }

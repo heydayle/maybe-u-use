@@ -2,11 +2,17 @@
   <div class="c-header tw-w-full tw-relative">
     <!--    //Share-->
     <div
-      class="c-container tw-mx-auto tw-px-2 tw-text-center tw-items-center tw-p-4 tw-items-center tw-space-x-4"
+      class="c-container tw-mx-auto tw-px-2 tw-text-center tw-items-center tw-p-4 tw-items-center"
     >
       <!--region @Title-->
-      <h1 class="tw-text-xl tw-font-bold tw-text-white">{{header.title}}</h1>
-      <h3>{{header.subTitle}}</h3>
+      <h1 class="tw-text-xl tw-font-bold tw-text-white" @click="$router.push('/')">{{header.title}}</h1>
+      <v-typical
+        class="tw-h-6 tw-border-b-1 tw-border-green-800"
+        :steps="[`Hello World! I'm Heyday Le`, 1000, `Follow me on github @heydayle`, 1000]"
+        :loop="Infinity"
+        :wrapper="'span'"
+      ></v-typical>
+      <span class="tw-animate-ping tw-animate-infinite tw-m-0 tw-text-white">|</span>
       <!--endregion-->
       <!--region @Back-->
       <v-btn
@@ -20,14 +26,35 @@
         </v-icon>
       </v-btn>
       <!--endregion-->
+      <!--region @Social-->
+      <div class="tw-absolute tw-right-4 tw-top-5">
+        <div class="tw-flex">
+          <v-btn
+            :href="'https://github.com/heydayle/maybe-u-use'"
+            icon
+            class=""
+            target="_blank"
+            title="Visit Github"
+          >
+            <v-icon dark>
+              mdi-github
+            </v-icon>
+          </v-btn>
+        </div>
+      </div>
+      <!--endregion-->
     </div>
   </div>
 </template>
 
 <script>
 import { header } from '~/misc/enums/layout'
+import VTypical from 'vue-typical';
 export default {
   name: "Header",
+  components: {
+    VTypical,
+  },
   props: {
     categories: {
       type: Array,

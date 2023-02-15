@@ -15,14 +15,17 @@ export const category = [
 export const listCategory = [
   {
     name: 'Horizontal',
+    slug: 'horizontal',
     id: 'list01'
   },
   {
     name: 'Vertical',
+    slug: 'vertical',
     id: 'list02'
   },
   {
     name: 'Horizontal 2 row',
+    slug: 'horizontal-2-row',
     id: 'list03'
   },
 ]
