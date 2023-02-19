@@ -18,6 +18,9 @@ html {
     @apply tw-pb-0.5;
   }
 }
+.c-button-h-30 {
+  @apply tw-h-20
+}
 .v-text-field {
   .v-input {
     &__slot {

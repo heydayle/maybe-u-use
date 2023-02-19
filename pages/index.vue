@@ -7,6 +7,7 @@
         text
         dark
         :to="`/${item.name}`"
+        class="c-button-h-30"
       >
         {{ item.name }}
       </v-btn>

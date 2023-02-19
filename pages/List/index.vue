@@ -6,6 +6,7 @@
       text
       dark
       :to="`/list/${item.slug}`"
+      class="c-button-h-30"
     >
       {{ item.name }}
     </v-btn>
