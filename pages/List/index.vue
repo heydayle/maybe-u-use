@@ -1,14 +1,18 @@
 <template>
-  <div class="tw-p-4 tw-space-x-4">
+  <div class="tw-p-4 tw-space-x-4 tw-text-center">
     <v-btn
       v-for="(item, index) in listCategory"
       :key="index"
       text
       dark
       :to="`/list/${item.slug}`"
-      class="c-button-h-30"
+      class="c-button-h-50"
     >
-      {{ item.name }}
+
+      <div class="tw-flex tw-flex-col tw-space-y-4">
+        <v-img :src="require(`~/assets/icons/${item.icon}.png`)" width="90"/>
+        <p class="tw-text-center">{{ item.name }}</p>
+      </div>
     </v-btn>
   </div>
 </template>

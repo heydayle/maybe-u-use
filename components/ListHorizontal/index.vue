@@ -47,7 +47,7 @@
           >
         </div>
         <div class="tw-flex tw-flex-col tw-flex-1 tw-p-4 tw-border-t-1 tw-border-solid tw-border-white-400">
-          <div>
+          <div class="tw-text-white">
             <h2 class="tw-font-bold">
               Title {{ index }}
             </h2>

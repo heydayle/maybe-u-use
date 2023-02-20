@@ -1,15 +1,19 @@
 <template>
-  <div class="tw-overflow-auto tw-p-4">
-    <div class="tw-space-x-4 tw-p-2">
+  <div class="tw-overflow-auto tw-p-4 tw-max-h-[90vh]">
+    <div class="tw-grid tw-grid-cols-3 tw-gap-4">
       <v-btn
         v-for="(item, index) in categories"
         :key="index"
         text
         dark
+        :title="item.name"
         :to="`/${item.name}`"
-        class="c-button-h-30"
+        class="c-button-h-50"
       >
-        {{ item.name }}
+        <div class="tw-flex tw-flex-col tw-space-y-4">
+          <v-img :src="require(`~/assets/icons/${item.icon}`)" width="90"/>
+          <p class="tw-text-center">{{ item.name }}</p>
+        </div>
       </v-btn>
     </div>
   </div>
