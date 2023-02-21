@@ -7,10 +7,13 @@
       <div class="tw-text-gray-100 tw-pb-2 tw-mb-4 tw-border-b-1">
         Category
       </div>
-      <div v-for="(item, index) in listCategory">
+      <div v-for="(item, index) in blockCategory">
         <router-link
           :key="index"
-          :to="`/list/${item.slug}`"
+          :to="{
+            path: item.slug,
+            params: item.slug,
+          }"
           class="tw-text-gray-600"
           :class="{ 'tw-text-gray-200': name === item.slug }"
         >
@@ -23,17 +26,17 @@
 
 <script>
 import ListHorizontal from "~/components/Shared/List/ListHorizontal";
-import { listCategory } from "~/misc/enums/array";
+import { blockCategory } from "~/misc/enums/array";
 export default {
   components: { horizontal: ListHorizontal },
   async asyncData({ params }) {
     const slug = params.slug;
-    const id = listCategory.find((e) => e.slug === slug).id;
-    return { slug, id };
+    const parent = params.parent
+    return { slug, parent };
   },
   data() {
     return {
-      listCategory,
+      blockCategory,
       name: "",
       id: "",
     };
@@ -44,7 +47,6 @@ export default {
   methods: {
     getSlug() {
       this.name = this.$route.params?.slug;
-      this.id = this.$route.params?.id;
     },
   },
 };

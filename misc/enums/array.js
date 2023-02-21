@@ -55,3 +55,23 @@ export const listCategory = [
     id: 'list03'
   },
 ]
+export const blockCategory = [
+  {
+    name: 'Style 1',
+    slug: 'style-1',
+    icon: 'block-1',
+    id: 'block01'
+  },
+  {
+    name: 'Style 2',
+    slug: 'style-2',
+    icon: 'block-2',
+    id: 'block02'
+  },
+  {
+    name: 'Style 3',
+    slug: 'style-3',
+    icon: 'block-3',
+    id: 'block03'
+  },
+]

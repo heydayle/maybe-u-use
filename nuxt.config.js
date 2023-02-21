@@ -39,6 +39,7 @@ export default {
     'nuxt-windicss',
     '@nuxtjs/router',
     '@nuxtjs/vuetify',
+    '@windicss/plugin-animations'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

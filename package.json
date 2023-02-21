@@ -12,6 +12,7 @@
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
     "@nuxtjs/axios": "^5.13.6",
+    "@windicss/plugin-animations": "^1.0.9",
     "core-js": "^3.25.3",
     "highlight.js": "^11.7.0",
     "nuxt": "^2.15.8",

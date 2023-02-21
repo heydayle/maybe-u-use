@@ -8,7 +8,11 @@
 </template>
 
 <script>
+import Header from '~/components/Common/Header'
 export default {
-  name: "default"
+  name: "default",
+  components: {
+    Header,
+  }
 }
 </script>

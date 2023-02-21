@@ -21,7 +21,7 @@
         class="tw-absolute tw-left-4 tw-top-5"
         @click="$router.back()"
       >
-        <v-icon dark>
+        <v-icon dark class="tw-text-white tw-animate-shakeX tw-animate-infinite">
           mdi-chevron-left
         </v-icon>
       </v-btn>
