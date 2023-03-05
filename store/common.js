@@ -2,7 +2,7 @@ export const COMMON_MUTATIONS = {
   UPDATE_ASIDE_MENU_STATUS: 'UPDATE_ASIDE_MENU_STATUS'
 }
 const state = () => ({
-  asideMenuStatus: true
+  asideMenuStatus: false
 })
 
 const mutations = {
