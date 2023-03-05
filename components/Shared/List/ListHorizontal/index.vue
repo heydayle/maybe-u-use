@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-p-4 tw-w-full tw-max-h-10">
+  <div class="tw-p-4 tw-w-full">
     <v-expansion-panels
       accordion
       dark

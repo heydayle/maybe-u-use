@@ -1,9 +1,11 @@
 @import './header';
 
 html {
-  overflow: hidden !important;
+  //overflow: hidden !important;
 }
-
+body {
+  overflow: auto !important;
+}
 /*scrollbar */
 ::-webkit-scrollbar {
   width: 5px;

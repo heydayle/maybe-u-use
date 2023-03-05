@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-grid tw-grid-cols-[1fr,300px] tw-h-[calc(100%-84px)]">
+  <div class="tw-grid tw-grid-cols-[1fr,300px]">
     <div class="tw-overflow-y-auto">
       <component :is="name" />
     </div>

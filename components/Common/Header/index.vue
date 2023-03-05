@@ -1,5 +1,5 @@
 <template>
-  <div class="c-header tw-w-full tw-relative">
+  <div class="c-header tw-w-full tw-fixed tw-z-2">
     <!--    //Share-->
     <div
       class="c-container tw-mx-auto tw-px-2 tw-text-center tw-items-center tw-p-4 tw-items-center"
@@ -16,13 +16,12 @@
       <!--endregion-->
       <!--region @Back-->
       <v-btn
-        v-if="isBack"
         text
         class="tw-absolute tw-left-4 tw-top-5"
-        @click="$router.back()"
+        @click="setAsideMenu"
       >
         <v-icon dark class="tw-text-white tw-animate-shakeX tw-animate-infinite">
-          mdi-chevron-left
+          mdi-menu
         </v-icon>
       </v-btn>
       <!--endregion-->
@@ -50,6 +49,7 @@
 <script>
 import { header } from '~/misc/enums/layout'
 import VTypical from 'vue-typical';
+import {COMMON_MUTATIONS} from "../../../store/common";
 export default {
   name: "Header",
   components: {
@@ -69,6 +69,14 @@ export default {
   computed: {
     isBack() {
       return this.$route.path !== '/'
+    },
+    asideMenuStatus() {
+      return this.$store.state.common.asideMenuStatus
+    }
+  },
+  methods: {
+    setAsideMenu() {
+      this.$store.commit(`common/${COMMON_MUTATIONS.UPDATE_ASIDE_MENU_STATUS}`, !this.asideMenuStatus)
     }
   }
 }

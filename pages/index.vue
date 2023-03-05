@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-overflow-auto tw-p-4 tw-max-h-[90vh]">
+  <div class="tw-overflow-auto tw-p-4">
     <div class="tw-grid tw-grid-cols-3 tw-gap-4">
       <v-btn
         v-for="(item, index) in categories"
